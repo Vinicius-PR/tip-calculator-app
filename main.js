@@ -85,6 +85,8 @@ tipSelectors.addEventListener('click', (event) => {
 resetBtn.addEventListener('click', () => {
   billInput.value = ''
   numberOfPeopleInput.value = ''
+  customPercentageInput.value = ''
   resultTip.innerHTML = '$--.--'
   resultTotalPerPerson.innerHTML = '$--.--'
+  buttons.forEach(btn => btn.classList.remove('active'))
 })
