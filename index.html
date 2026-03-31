@@ -10,8 +10,77 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
+  <script defer src="./main.js"></script>
   <title>Frontend Mentor | Tip calculator app</title>
 </head>
 <body>
+
+  <h1 class="sr-only">Splitter</h1>
+  
+  <div class="body-wrapper">
+     <header>
+      <img src="./images/logo.svg" alt="Logo">
+    </header>
+
+    <main class="main-container">
+
+      <section class="inputs-container">
+        <div class="form-group">
+          <label for="bill" class="text-preset-5 text-color-grey-500">Bill</label>
+          <div class="input-wrapper">
+            <img src="./images/icon-dollar.svg" alt="" class="icon">
+            <input class="bill-input text-preset-3" id="bill" name="bill" type="text" inputmode="decimal" placeholder="0.00">
+          </div>
+        </div>
+
+        <div class="tip-container">
+          <h2 class="text-preset-5 text-color-grey-500">Select Tip %</h2>
+          <div class="tip-selector">
+            <button class="text-preset-3" type="button" data-tip="5">5%</button>
+            <button class="text-preset-3" type="button" data-tip="10">10%</button>
+            <button class="active text-preset-3" type="button" data-tip="15">15%</button>
+            <button class="text-preset-3" type="button" data-tip="25">25%</button>
+            <button class="text-preset-3" type="button" data-tip="50">50%</button>
+
+            <input class="text-preset-3" type="text" inputmode="decimal" placeholder="Custom">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="people" class="text-preset-5 text-color-grey-500">Number of People</label>
+          <div class="input-wrapper">
+            <img src="./images/icon-person.svg" alt="" class="icon">
+            <input class="people-input text-preset-3" id="people" name="people" type="text" inputmode="numeric" placeholder="0">
+          </div>
+        </div>
+
+      </section>
+
+      <section class="result-container">
+
+        <div class="results">
+
+          <div class="result-content">
+            <div class="result-title">
+              <h3 class="text-preset-5">Tip Amount</h3>
+              <span class="text-preset-6">/ person</span>
+            </div>
+            <h2 class="result-tip text-preset-1">$4.27</h2>
+          </div>
+
+          <div class="result-content">
+            <div class="result-title">
+              <h3 class="text-preset-5">Total</h3>
+              <span class="text-preset-6">/ person</span>
+            </div>
+            <h2 class="result-total-per-person text-preset-1">$32.79</h2>
+          </div>
+
+        </div>
+
+        <button class="reset-btn text-preset-4">RESET</button>
+      </section>
+    </main>
+  </div>
+
 </body>
 </html>
