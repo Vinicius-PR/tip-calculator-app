@@ -27,6 +27,8 @@ function cleanErrors() {
   errorSpanNumPeople.classList.remove('error')
   numberOfPeopleInput.classList.remove('error')
   billInput.classList.remove('error')
+  billInput.setAttribute('aria-invalid', 'false')
+  numberOfPeopleInput.setAttribute('aria-invalid', 'false')
 }
 
 function calculateTipAndTotal(bill, percentage, numberOfPeople) {
@@ -34,11 +36,13 @@ function calculateTipAndTotal(bill, percentage, numberOfPeople) {
   if (bill == 0) {
     errorSpanBill.classList.add('error')
     billInput.classList.add('error')
+    billInput.setAttribute('aria-invalid', 'true')
   }
 
   if (numberOfPeople == 0) {
     errorSpanNumPeople.classList.add('error')
     numberOfPeopleInput.classList.add('error')
+    numberOfPeopleInput.setAttribute('aria-invalid', 'true')
   }
 
   if (bill == 0 || numberOfPeople == 0) {
