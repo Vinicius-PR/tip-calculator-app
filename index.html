@@ -26,7 +26,10 @@
 
       <section class="inputs-container">
         <div class="form-group">
-          <label for="bill" class="text-preset-5 text-color-grey-500">Bill</label>
+          <div class="label-group">
+            <label for="bill" class="text-preset-5 text-color-grey-500">Bill</label>
+            <span class="text-preset-5 error-span-bill">Can’t be zero</span>
+          </div>
           <div class="input-wrapper">
             <img src="./images/icon-dollar.svg" alt="" class="icon">
             <input class="bill-input text-preset-3" id="bill" name="bill" type="text" inputmode="decimal" placeholder="0.00">
@@ -36,7 +39,7 @@
         <div class="tip-container">
           <h2 class="text-preset-5 text-color-grey-500">Select Tip %</h2>
           <div class="tip-selector">
-            <button class="text-preset-3" type="button" data-tip="5">5%</button>
+            <button class="percentag-btn text-preset-3" type="button" data-tip="5">5%</button>
             <button class="text-preset-3" type="button" data-tip="10">10%</button>
             <button class="text-preset-3" type="button" data-tip="15">15%</button>
             <button class="text-preset-3" type="button" data-tip="25">25%</button>
@@ -46,7 +49,10 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="people" class="text-preset-5 text-color-grey-500">Number of People</label>
+          <div class="label-group">
+            <label for="people" class="text-preset-5 text-color-grey-500">Number of People</label>
+            <span class="text-preset-5 error-span-num">Can’t be zero</span>
+          </div>
           <div class="input-wrapper">
             <img src="./images/icon-person.svg" alt="" class="icon">
             <input class="people-input text-preset-3" id="people" name="people" type="text" inputmode="numeric" placeholder="0">
@@ -77,7 +83,7 @@
 
         </div>
 
-        <button class="reset-btn text-preset-4">RESET</button>
+        <button disabled class="reset-btn text-preset-4">RESET</button>
       </section>
     </main>
   </div>

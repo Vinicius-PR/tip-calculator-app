@@ -9,6 +9,10 @@ const resultTip = document.querySelector('.result-tip')
 const resultTotalPerPerson = document.querySelector('.result-total-per-person')
 const resetBtn = document.querySelector('.reset-btn')
 
+const errorSpanBill = document.querySelector('.error-span-bill')
+const errorSpanNumPeople = document.querySelector('.error-span-num')
+
+
 let billValue = ''
 let numberOfPeople = ''
 let percentageValue = ''
@@ -18,12 +22,31 @@ const results = {
   totalPerPerson: 0
 }
 
+function cleanErrors() {
+  errorSpanBill.classList.remove('error')
+  errorSpanNumPeople.classList.remove('error')
+  numberOfPeopleInput.classList.remove('error')
+  billInput.classList.remove('error')
+}
+
 function calculateTipAndTotal(bill, percentage, numberOfPeople) {
-  if (bill == 0 || percentage == 0) {
+  resetBtn.disabled = false
+  if (bill == 0) {
+    errorSpanBill.classList.add('error')
+    billInput.classList.add('error')
+  }
+
+  if (numberOfPeople == 0) {
+    errorSpanNumPeople.classList.add('error')
+    numberOfPeopleInput.classList.add('error')
+  }
+
+  if (bill == 0 || numberOfPeople == 0) {
     results.tipPerPerson = 0
     results.totalPerPerson = 0
     return
   }
+
   const tip = ((bill * (percentage / 100)) / numberOfPeople)
   const totalPerPerson = (bill / numberOfPeople) + tip
   results.tipPerPerson = tip.toFixed(2)
@@ -42,6 +65,7 @@ function runCalculationAndUpdate(billValue, percentageValue, numberOfPeople) {
 }
 
 billInput.addEventListener('input', () => {
+  cleanErrors()
   billInput.value = billInput.value
     .replace(',', '.')
     .replace(/[^0-9.]/g, '')
@@ -52,6 +76,7 @@ billInput.addEventListener('input', () => {
 })
 
 numberOfPeopleInput.addEventListener('input', () => {
+  cleanErrors()
   numberOfPeopleInput.value = numberOfPeopleInput.value
     .replace(/[^0-9.]/g, '')
     .replace(/\./g, '')
@@ -88,5 +113,7 @@ resetBtn.addEventListener('click', () => {
   customPercentageInput.value = ''
   resultTip.innerHTML = '$--.--'
   resultTotalPerPerson.innerHTML = '$--.--'
+  resetBtn.disabled = true
+  cleanErrors()
   buttons.forEach(btn => btn.classList.remove('active'))
 })

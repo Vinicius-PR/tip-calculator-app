@@ -157,6 +157,22 @@ input[type="number"] {
   gap: 2.5rem;
 }
 
+.error-span-bill,
+.error-span-num {
+  color: var(--orange-400);
+  display: none;
+}
+
+.error-span-bill.error,
+.error-span-num.error  {
+  display: block;
+}
+
+.label-group {
+  display: flex;
+  justify-content: space-between;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -173,12 +189,20 @@ input[type="number"] {
   width: 100%;
 
   text-align: right;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 5px;
 
   background-color: var(--grey-50);
   color: var(--green-900);
   outline-color: var(--green-900);
+}
+
+.form-group input:hover {
+  border-color: var(--green-400);
+}
+
+.form-group input.error {
+  border-color: var(--orange-400);
 }
 
 .input-wrapper {
@@ -216,6 +240,11 @@ input[type="number"] {
 .tip-selector button.active {
   color: var(--green-900);
   background-color: var(--green-400);
+}
+
+.tip-selector button:hover {
+  color: var(--green-900);
+  background-color: var(--green-200);
 }
 
 .result-container {
@@ -257,7 +286,22 @@ input[type="number"] {
   padding: var(--spacing-100) 0;
   border: none;
   border-radius: 5px;
+  background-color: var(--green-750);
+  color: var(--green-800);
+  transition: all 0.2s ease-in-out;
+}
+
+.reset-btn:not(:disabled) {
   background-color: var(--green-400);
+  color: var(--green-900);
+}
+
+.reset-btn:disabled {
+  cursor: not-allowed;
+}
+
+.reset-btn:hover:not(:disabled) {
+  background-color: var(--green-200);
   color: var(--green-900);
 }
 
