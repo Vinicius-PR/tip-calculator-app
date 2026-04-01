@@ -237,6 +237,8 @@ input[type="number"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow-x: auto;
+  max-width: 21.3125rem;
 }
 
 .result-content h2{
@@ -281,6 +283,12 @@ input[type="number"] {
   }
 }
 
+@media (max-width: 40em) {
+  .result-content {
+    max-width: calc(100vw - 9.42rem - 4rem - 2rem);
+  }
+}
+
 @media (max-width: 31.25em) {
   .body-wrapper {
     padding: 1rem 0;
@@ -292,6 +300,10 @@ input[type="number"] {
 
   .results {
     gap: var(--spacing-300);
+  }
+
+  .result-content {
+    max-width: calc(100vw - 4rem - 3rem);
   }
 
   .result-container {
