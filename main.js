@@ -111,8 +111,8 @@ resetBtn.addEventListener('click', () => {
   billInput.value = ''
   numberOfPeopleInput.value = ''
   customPercentageInput.value = ''
-  resultTip.innerHTML = '$--.--'
-  resultTotalPerPerson.innerHTML = '$--.--'
+  resultTip.innerHTML = '$0.00-'
+  resultTotalPerPerson.innerHTML = '$0.00'
   resetBtn.disabled = true
   cleanErrors()
   buttons.forEach(btn => btn.classList.remove('active'))
